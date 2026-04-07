@@ -1,16 +1,132 @@
-<!DOCTYPE html>
-
-<html>
-
+<<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Portfolio</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .left, .right {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .left {
+      width: 30%;
+    }
+
+    .right {
+      width: 70%;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #2f80ed;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <h1>My Portfolio</h1>
+    
+    <nav role="navigation" aria-label="Main Navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <div class="container">
+
+    <!-- SIDEBAR -->
+    <aside class="left" role="complementary">
+      <img src="https://picsum.photos/300" alt="Profile photo of a developer">
+
+      <h2>Shubaham Bhola</h2>
+      <p>Software Engineer</p>
+      <p>Email: abcxz@gmail.com</p>
+
+      <!-- SKILLS -->
+      <section id="skills" role="region" aria-labelledby="skills-heading">
+        <h3 id="skills-heading">Skills</h3>
+        
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>React</span>
+        </div>
+      </section>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="right" role="main" id="about">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate software developer with experience in modern web technologies.
+        I enjoy solving problems and building scalable applications.
+      </p>
+
+      <!-- PROJECTS -->
+      <section id="projects" role="region" aria-labelledby="projects-heading">
+        <h3 id="projects-heading">Projects</h3>
+        
+        <article role="article">
+          <h4>Portfolio Website</h4>
+          <p>A responsive personal portfolio built using HTML, CSS, and JavaScript.</p>
+        </article>
+
+        <article role="article">
+          <h4>Todo App</h4>
+          <p>A task management app with local storage support.</p>
+        </article>
+      </section>
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <p style="text-align:center;">© 2026 My Portfolio</p>
+  </footer>
 
 </body>
-
 </html>
